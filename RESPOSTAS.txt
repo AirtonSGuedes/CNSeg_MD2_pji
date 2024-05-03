@@ -1,0 +1,89 @@
+1. Entidades necessárias:
+
+Empresa: Armazena informações sobre as empresas.
+Tecnologia: Armazena informações sobre as tecnologias utilizadas.
+Tecnologia_Utilizada: Relaciona as empresas com as tecnologias que elas utilizam.
+Colaborador: Armazena informações sobre os colaboradores das empresas.
+
+2. Campos principais e seus respectivos tipos:
+
+Empresa:
+
+id_empresa: Inteiro único, identificador da empresa.
+Cnpj: Varchar(20), CNPJ da empresa.
+Nome_Empresa: Varchar(100), nome da empresa.
+Ramo_Atuacao: Varchar(20), ramo de atuação da empresa.
+Tecnologia:
+
+id_tecnologia: Inteiro serial, identificador da tecnologia (chave primária).
+nome_tecnologia: Varchar(50), nome da tecnologia.
+area: Varchar(100), área de aplicação da tecnologia.
+Tecnologia_Utilizada:
+
+id_tecnologia_utilizada: Inteiro serial, identificador da relação entre empresa e tecnologia (chave primária).
+id_empresa: Inteiro, identificador da empresa (chave estrangeira).
+id_tecnologia: Inteiro, identificador da tecnologia (chave estrangeira).
+Colaborador:
+
+id_colaborador: Inteiro serial, identificador do colaborador (chave primária).
+nome_colaborador: Varchar(200), nome do colaborador.
+cargo: Varchar(200), cargo do colaborador.
+id_empresa: Inteiro, identificador da empresa (chave estrangeira).
+
+3. Relacionamentos entre as entidades:
+
+Uma empresa pode utilizar várias tecnologias (relacionamento muitos para muitos).
+Uma tecnologia pode ser utilizada por várias empresas (relacionamento muitos para muitos).
+Um colaborador trabalha em apenas uma empresa (relacionamento um para muitos).
+
+4. Simulação de 2 registros para cada entidade:
+Empresa 1:
+
+ID: 1
+CNPJ: 12345678901234
+Nome: Empresa A
+Ramo de Atuação: Tecnologia
+Empresa 2:
+
+ID: 2
+CNPJ: 98765432109876
+Nome: Empresa B
+Ramo de Atuação: Saúde
+2. Tecnologia:
+
+Tecnologia 1:
+
+ID: 1
+Nome: Inteligência Artificial
+Área: Tecnologia
+Tecnologia 2:
+
+ID: 2
+Nome: Biomedicina
+Área: Saúde
+3. Tecnologia_Utilizada:
+
+Relação 1:
+
+ID: 1
+Empresa ID: 1
+Tecnologia ID: 1 (Empresa A utiliza Inteligência Artificial)
+Relação 2:
+
+ID: 2
+Empresa ID: 2
+Tecnologia ID: 2 (Empresa B utiliza Biomedicina)
+4. Colaborador:
+
+Colaborador 1:
+
+ID: 1
+Nome: João Silva
+Cargo: Desenvolvedor
+Empresa ID: 1 (João Silva trabalha na Empresa A)
+Colaborador 2:
+
+ID: 2
+Nome: Maria Souza
+Cargo: Pesquisador
+Empresa ID: 2 (Maria Souza trabalha na Empresa B)
